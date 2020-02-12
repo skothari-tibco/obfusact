@@ -2,7 +2,6 @@ package obfusact
 
 import (
 	"bytes"
-	"encoding/json"
 	"strings"
 
 	"github.com/project-flogo/core/activity"
@@ -62,13 +61,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 		payload = obfuscate(a.operation, val.(string), payload)
 	}
 
-	result, err := json.Marshal(payload)
-
-	if err != nil {
-		return true, err
-	}
-
-	ctx.SetOutput("result", result)
+	ctx.SetOutput("result", payload)
 
 	return true, nil
 }
