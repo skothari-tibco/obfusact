@@ -3,8 +3,8 @@ package obfusact
 import "github.com/project-flogo/core/data/coerce"
 
 type Settings struct {
-	Operation string   `md:"operation,required"`
-	Fields    []string `md:"fields,required"`
+	Operation string        `md:"operation,required"`
+	Fields    []interface{} `md:"fields,required"`
 }
 
 type Input struct {

@@ -59,7 +59,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 
 	// Iterate over the keys for which the obfuscate function should apply.
 	for _, val := range a.settings.Fields {
-		payload = obfuscate(a.operation, val, payload)
+		payload = obfuscate(a.operation, val.(string), payload)
 	}
 
 	result, err := json.Marshal(payload)
