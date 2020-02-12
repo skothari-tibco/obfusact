@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	_ = activity.Register(&Activity{}) //activity.Register(&Activity{}, New) to create instances using factory method 'New'
+	_ = activity.Register(&Activity{}, New) //activity.Register(&Activity{}, New) to create instances using factory method 'New'
 }
 
 // Function which defines how to obfuscate the value
